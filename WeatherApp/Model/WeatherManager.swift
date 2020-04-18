@@ -40,7 +40,6 @@ struct WeatherManager {
                 }
             }
             task.resume()
-    
         }
     }
     

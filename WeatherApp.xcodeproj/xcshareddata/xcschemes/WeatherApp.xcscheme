@@ -56,6 +56,16 @@
             value = "688ccf81582f9e912922ff138e75a0d3"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "UNSPLASH_ACCESS_KEY"
+            value = "hrOiBGmZxsMIkdw29rj6KyoA4wlOZ26OXaiXXR2Ty7E"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "UNSPLASH_SECRET_KEY"
+            value = "mD6z0Can7ioQoEH4jS0rqBCpyak_W7B-2uUGY3hNRP4"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
