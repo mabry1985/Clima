@@ -62,9 +62,7 @@ struct ImageManager {
     
     func formatCity(_ city: String) -> String {
         let array = city.components(separatedBy: " ")
-        print (array[0])
         let formattedCity = array.joined(separator: "-")
-        print (formattedCity)
         return formattedCity
     }
 }
