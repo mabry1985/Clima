@@ -1,24 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13122.16" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="okd-27-eFw">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-LA-70Y" userLabel="Weather Info View">
+                                <rect key="frame" x="795" y="390" width="330" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIv-2M-W1b">
+                                        <rect key="frame" x="48.5" y="127" width="233" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.47222816780821919" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wIv-2M-W1b" firstAttribute="centerX" secondItem="xhx-LA-70Y" secondAttribute="centerX" id="LeD-Vb-n6f"/>
+                                    <constraint firstItem="wIv-2M-W1b" firstAttribute="centerY" secondItem="xhx-LA-70Y" secondAttribute="centerY" id="pp7-gN-pnV"/>
+                                    <constraint firstItem="wIv-2M-W1b" firstAttribute="centerX" secondItem="xhx-LA-70Y" secondAttribute="centerX" id="q3P-v3-Lzx"/>
+                                    <constraint firstAttribute="width" constant="330" id="xKc-5f-KW8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2y1-aH-B0f"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ek-50-yzj"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BZy-Ng-7ch"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C6s-YG-oeG"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hvs-8B-so8"/>
+                            <constraint firstItem="okd-27-eFw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NKG-7f-CyR"/>
+                            <constraint firstAttribute="trailing" secondItem="okd-27-eFw" secondAttribute="trailing" id="Q4d-NE-L6p"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" constant="330" id="SLA-Lc-zzI"/>
+                            <constraint firstAttribute="bottom" secondItem="okd-27-eFw" secondAttribute="bottom" id="b4N-I4-fz1"/>
+                            <constraint firstItem="okd-27-eFw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jKc-QO-s2Q"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q5j-M7-iHA"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rd4-qS-I0Z"/>
+                            <constraint firstItem="xhx-LA-70Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w3n-rj-E4k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="okd-27-eFw" id="z1O-hx-b3P"/>
+                        <outlet property="cityLabel" destination="wIv-2M-W1b" id="bBN-NN-jzt"/>
+                        <outlet property="weatherInfoBackground" destination="xhx-LA-70Y" id="Dsi-qI-bWR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53" y="64"/>
         </scene>
     </scenes>
 </document>

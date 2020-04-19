@@ -20,7 +20,9 @@ struct ImageManager {
     let apiKey = ProcessInfo.processInfo.environment["UNSPLASH_ACCESS_KEY"]
     
     func fetchImage(city: String, weather: String) {
-        let urlString = "https://api.unsplash.com/photos/random?client_id=hrOiBGmZxsMIkdw29rj6KyoA4wlOZ26OXaiXXR2Ty7E&query=\(city)-\(weather)&orientation=landscape"
+        
+        let formattedCity = formatCity(city)
+        let urlString = "https://api.unsplash.com/photos/random?client_id=hrOiBGmZxsMIkdw29rj6KyoA4wlOZ26OXaiXXR2Ty7E&query=\(formattedCity)-\(weather)&orientation=landscape"
         
         performRequest(with: urlString)
     }
@@ -56,5 +58,13 @@ struct ImageManager {
             return nil
         }
             
+    }
+    
+    func formatCity(_ city: String) -> String {
+        let array = city.components(separatedBy: " ")
+        print (array[0])
+        let formattedCity = array.joined(separator: "-")
+        print (formattedCity)
+        return formattedCity
     }
 }

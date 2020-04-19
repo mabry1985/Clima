@@ -50,9 +50,7 @@ extension MainViewController: WeatherManagerDelegate {
             self.cityLabel.text = weather.cityName
             self.tempLabel.text = "\(weather.temperatureString)°F"
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-            print("'before fetch image call'")
             self.imageManager.fetchImage(city: weather.cityName, weather: weather.description)
-            print("'after fetch image call'")
         }
     }
     
