@@ -9,13 +9,10 @@
 import Foundation
 
 // MARK: - WeatherData
-struct WeatherData: Decodable {
-    let coord: Coord
+struct WeatherData: Codable {
     let weather: [Weather]
     let base: String
     let main: Main
-    let wind: Wind
-    let clouds: Clouds
     let dt: Int
     let sys: Sys
     let timezone, id: Int
@@ -23,39 +20,23 @@ struct WeatherData: Decodable {
     let cod: Int
 }
 
-// MARK: - Clouds
-struct Clouds: Decodable {
-    let all: Int
-}
-
-// MARK: - Coord
-struct Coord: Decodable {
-    let lon, lat: Double
-}
-
 // MARK: - Main
-struct Main: Decodable {
-    let temp, feelsLike, tempMin, tempMax: Double
-    let pressure, humidity: Int
+struct Main: Codable {
+    let temp: Double
 
     enum CodingKeys: String, CodingKey {
         case temp
-        case feelsLike = "feels_like"
-        case tempMin = "temp_min"
-        case tempMax = "temp_max"
-        case pressure, humidity
     }
 }
 
 // MARK: - Sys
-struct Sys: Decodable {
-    let type, id: Int
+struct Sys: Codable {
     let country: String
     let sunrise, sunset: Int
 }
 
 // MARK: - Weather
-struct Weather: Decodable {
+struct Weather: Codable {
     let id: Int
     let main, weatherDescription, icon: String
 
@@ -64,10 +45,4 @@ struct Weather: Decodable {
         case weatherDescription = "description"
         case icon
     }
-}
-
-// MARK: - Wind
-struct Wind: Decodable {
-    let speed: Double
-    let deg: Int
 }

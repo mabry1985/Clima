@@ -34,6 +34,8 @@
 		2C7556EC244BABA000CDD359 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		2C7556EE244BABBA00CDD359 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		2C7556F0244BB9F300CDD359 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		2C7556F2244CCBBA00CDD359 /* Portland.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Portland.gpx; sourceTree = "<group>"; };
+		2C7556F3244CDC0900CDD359 /* Portland.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Portland.gpx; path = WeatherApp/Portland.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		2C012751244A3C130002A76A = {
 			isa = PBXGroup;
 			children = (
+				2C7556F3244CDC0900CDD359 /* Portland.gpx */,
 				2C01275C244A3C130002A76A /* WeatherApp */,
 				2C01275B244A3C130002A76A /* Products */,
 			);
@@ -67,12 +70,12 @@
 			isa = PBXGroup;
 			children = (
 				2C29E438244A541200CAF602 /* Controller */,
-				2C29E437244A53C100CAF602 /* Views */,
 				2C29E436244A53B700CAF602 /* Model */,
 				2C01275D244A3C130002A76A /* AppDelegate.swift */,
 				2C012764244A3C160002A76A /* Assets.xcassets */,
 				2C012766244A3C160002A76A /* LaunchScreen.storyboard */,
 				2C012769244A3C160002A76A /* Info.plist */,
+				2C7556F2244CCBBA00CDD359 /* Portland.gpx */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -102,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				2C01275F244A3C130002A76A /* MainViewController.swift */,
+				2C29E437244A53C100CAF602 /* Views */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

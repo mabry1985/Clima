@@ -33,10 +33,6 @@ class MainViewController: UIViewController {
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-
-        
-        weatherManager.fetchWeather(city: "Portland", state: "Oregon")
-        imageManager.fetchImage(city: "Portland", state: "Oregon", weather: "Rain")
         
     }
     
@@ -54,6 +50,9 @@ extension MainViewController: WeatherManagerDelegate {
             self.cityLabel.text = weather.cityName
             self.tempLabel.text = "\(weather.temperatureString)°F"
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            print("'before fetch image call'")
+            self.imageManager.fetchImage(city: weather.cityName, weather: weather.description)
+            print("'after fetch image call'")
         }
     }
     
@@ -88,7 +87,11 @@ extension MainViewController: ImageManagerDelegate {
 extension MainViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Location Updated")
+        if let location = locations.last {
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            weatherManager.fetchWeather(latitude: lat, longitude: lon)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
