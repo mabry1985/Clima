@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainViewController: UIViewController, WeatherManagerDelegate, ImageManagerDelegate {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
@@ -18,17 +19,35 @@ class MainViewController: UIViewController, WeatherManagerDelegate, ImageManager
     
     var imageManager = ImageManager()
     var weatherManager = WeatherManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         weatherInfoBackground.layer.cornerRadius = 15.0
+        
         weatherManager.delegate = self
         imageManager.delegate = self
+        locationManager.delegate = self
+        
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+
         
         weatherManager.fetchWeather(city: "Portland", state: "Oregon")
         imageManager.fetchImage(city: "Portland", state: "Oregon", weather: "Rain")
         
     }
+    
+    func didFailWithError(_ error: Error) {
+        print(error)
+    }
+}
+
+//MARK: - WeatherManagerDelegate
+
+extension MainViewController: WeatherManagerDelegate {
     
     func didUpdateWeather(_ weatherManager: WeatherManager, _ weather: WeatherModel) {
         DispatchQueue.main.async {
@@ -38,14 +57,16 @@ class MainViewController: UIViewController, WeatherManagerDelegate, ImageManager
         }
     }
     
+}
+
+
+//MARK: - ImageManagerDelegate
+
+extension MainViewController: ImageManagerDelegate {
     func didUpdateImage(_ imageMananger: ImageManager, _ image: ImageModel) {
         DispatchQueue.main.async {
             self.setImage(from: "\(image.url)?&fit=crop&h=1080&w=1920")
         }
-    }
-    
-    func didFailWithError(_ error: Error) {
-        print(error)
     }
     
     func setImage(from url: String) {
@@ -59,6 +80,19 @@ class MainViewController: UIViewController, WeatherManagerDelegate, ImageManager
                 self.backgroundImageView.image = image
             }
         }
+    }
+}
+
+//MARK: CLLocationManagerDelegate
+
+extension MainViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Location Updated")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
     
 }
