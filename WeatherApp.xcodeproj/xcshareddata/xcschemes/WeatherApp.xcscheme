@@ -68,8 +68,8 @@
          </EnvironmentVariable>
       </EnvironmentVariables>
       <LocationScenarioReference
-         identifier = "Hong Kong, China"
-         referenceType = "1">
+         identifier = "../../WeatherApp/Portland.gpx"
+         referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction

@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var weatherInfoBackground: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var imageManager = ImageManager()
     var weatherManager = WeatherManager()
@@ -29,11 +30,33 @@ class MainViewController: UIViewController {
         weatherManager.delegate = self
         imageManager.delegate = self
         locationManager.delegate = self
-        
-        
+    
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
+        
+    }
+    
+    func updateWeatherData(city: String, state: String) {
+        weatherManager.fetchWeather(city: city, state: state)
+    }
+    
+    override var preferredFocusedView: UIView? {
+        get {
+            return self.settingsButton
+        }
+    }
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "openSearchForm", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openSearchForm" {
+            let destinationVC = segue.destination as! SearchViewController
+            destinationVC.mainViewController = self
+            destinationVC.backgroundImage = backgroundImageView
+        }
     }
     
     func didFailWithError(_ error: Error) {
@@ -47,6 +70,7 @@ extension MainViewController: WeatherManagerDelegate {
     
     func didUpdateWeather(_ weatherManager: WeatherManager, _ weather: WeatherModel) {
         DispatchQueue.main.async {
+            print(weather.cityName)
             self.cityLabel.text = weather.cityName
             self.tempLabel.text = "\(weather.temperatureString)°F"
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
@@ -55,7 +79,6 @@ extension MainViewController: WeatherManagerDelegate {
     }
     
 }
-
 
 //MARK: - ImageManagerDelegate
 
@@ -88,6 +111,7 @@ extension MainViewController: CLLocationManagerDelegate {
         if let location = locations.last {
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
+
             weatherManager.fetchWeather(latitude: lat, longitude: lon)
         }
     }
@@ -97,3 +121,9 @@ extension MainViewController: CLLocationManagerDelegate {
     }
     
 }
+
+//MARK: UISearchResultsUpdating
+
+//extension MainViewController: UISearchResultsUpdating {
+//
+//}

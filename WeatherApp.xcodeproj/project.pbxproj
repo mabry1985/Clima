@@ -18,6 +18,7 @@
 		2C7556ED244BABA000CDD359 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7556EC244BABA000CDD359 /* ImageData.swift */; };
 		2C7556EF244BABBA00CDD359 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7556EE244BABBA00CDD359 /* ImageModel.swift */; };
 		2C7556F1244BB9F300CDD359 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7556F0244BB9F300CDD359 /* ImageManager.swift */; };
+		2C7556F7244E1D4000CDD359 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7556F6244E1D4000CDD359 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2C7556F0244BB9F300CDD359 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		2C7556F2244CCBBA00CDD359 /* Portland.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Portland.gpx; sourceTree = "<group>"; };
 		2C7556F3244CDC0900CDD359 /* Portland.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Portland.gpx; path = WeatherApp/Portland.gpx; sourceTree = "<group>"; };
+		2C7556F6244E1D4000CDD359 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +71,9 @@
 		2C01275C244A3C130002A76A /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				2C29E438244A541200CAF602 /* Controller */,
 				2C29E436244A53B700CAF602 /* Model */,
+				2C29E437244A53C100CAF602 /* Views */,
+				2C29E438244A541200CAF602 /* Controller */,
 				2C01275D244A3C130002A76A /* AppDelegate.swift */,
 				2C012764244A3C160002A76A /* Assets.xcassets */,
 				2C012766244A3C160002A76A /* LaunchScreen.storyboard */,
@@ -105,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				2C01275F244A3C130002A76A /* MainViewController.swift */,
-				2C29E437244A53C100CAF602 /* Views */,
+				2C7556F6244E1D4000CDD359 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				2C012760244A3C130002A76A /* MainViewController.swift in Sources */,
 				2C29E43A244A545100CAF602 /* WeatherData.swift in Sources */,
 				2C29E43C244A54E700CAF602 /* WeatherManager.swift in Sources */,
+				2C7556F7244E1D4000CDD359 /* SearchViewController.swift in Sources */,
 				2C7556F1244BB9F300CDD359 /* ImageManager.swift in Sources */,
 				2C01275E244A3C130002A76A /* AppDelegate.swift in Sources */,
 				2C2677C9244A678900444A91 /* WeatherModel.swift in Sources */,
