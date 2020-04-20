@@ -84,8 +84,8 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-LA-70Y" userLabel="Weather Info View">
                                 <rect key="frame" x="795" y="390" width="330" height="300"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" insetsLayoutMarginsFromSafeArea="NO" image="cloud.bolt.rain" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-3y-d8K" userLabel="Weather Icon Image">
-                                        <rect key="frame" x="95" y="25" width="140" height="142"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" insetsLayoutMarginsFromSafeArea="NO" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-3y-d8K" userLabel="Weather Icon Image">
+                                        <rect key="frame" x="95" y="23.5" width="140" height="139"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="BIX-lt-v6q"/>
@@ -117,7 +117,7 @@
                                     <constraint firstAttribute="width" constant="330" id="xKc-5f-KW8"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-NQ-0RD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-NQ-0RD" userLabel="Search Button">
                                 <rect key="frame" x="1820" y="0.0" width="100" height="73"/>
                                 <rect key="contentStretch" x="0.90000000000000002" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
@@ -125,7 +125,19 @@
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" image="magnifyingglass" catalog="system"/>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="MeN-gM-Zhd"/>
+                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="BNl-Xd-WM2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="huo-uV-JQ8" userLabel="Current Location">
+                                <rect key="frame" x="1763" y="-1" width="101" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.90000000000000002" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" image="location" catalog="system"/>
+                                <connections>
+                                    <action selector="currentLocationPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dKA-LW-aeD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -153,7 +165,7 @@
                         <outlet property="backgroundImageView" destination="nbA-RE-Xtl" id="VwQ-7S-5aw"/>
                         <outlet property="cityLabel" destination="wIv-2M-W1b" id="bBN-NN-jzt"/>
                         <outlet property="conditionImageView" destination="Dre-3y-d8K" id="C6n-Ro-xeo"/>
-                        <outlet property="settingsButton" destination="fGP-NQ-0RD" id="cdN-hA-KJ9"/>
+                        <outlet property="searchButton" destination="fGP-NQ-0RD" id="vZc-0R-ARf"/>
                         <outlet property="tempLabel" destination="AXA-bu-itS" id="9P6-q3-P5f"/>
                         <outlet property="weatherInfoBackground" destination="xhx-LA-70Y" id="Dsi-qI-bWR"/>
                         <segue destination="Cbc-Y6-7sz" kind="presentation" identifier="openSearchForm" id="Rj7-qX-0UV"/>
@@ -165,7 +177,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cloud.bolt.rain" catalog="system" width="122" height="128"/>
+        <image name="cloud.sun" catalog="system" width="128" height="90"/>
+        <image name="location" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>

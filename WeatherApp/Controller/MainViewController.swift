@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var weatherInfoBackground: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
     
     var imageManager = ImageManager()
     var weatherManager = WeatherManager()
@@ -34,7 +34,6 @@ class MainViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        
     }
     
     func updateWeatherData(city: String, state: String) {
@@ -43,12 +42,16 @@ class MainViewController: UIViewController {
     
     override var preferredFocusedView: UIView? {
         get {
-            return self.settingsButton
+            return self.searchButton
         }
     }
     
-    @IBAction func buttonPressed(_ sender: Any) {
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "openSearchForm", sender: self)
+    }
+    
+    @IBAction func currentLocationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
