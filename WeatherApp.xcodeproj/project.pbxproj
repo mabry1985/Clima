@@ -86,12 +86,12 @@
 		2C29E436244A53B700CAF602 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2C29E439244A545100CAF602 /* WeatherData.swift */,
-				2C29E43B244A54E700CAF602 /* WeatherManager.swift */,
-				2C2677C8244A678900444A91 /* WeatherModel.swift */,
 				2C7556EC244BABA000CDD359 /* ImageData.swift */,
 				2C7556EE244BABBA00CDD359 /* ImageModel.swift */,
 				2C7556F0244BB9F300CDD359 /* ImageManager.swift */,
+				2C29E439244A545100CAF602 /* WeatherData.swift */,
+				2C29E43B244A54E700CAF602 /* WeatherManager.swift */,
+				2C2677C8244A678900444A91 /* WeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
