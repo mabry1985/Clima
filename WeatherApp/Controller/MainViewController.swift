@@ -14,9 +14,17 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
-    @IBOutlet weak var weatherInfoBackground: UIView!
+    @IBOutlet weak var currentWeatherInfoView: UIView!
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
+    
     @IBOutlet weak var searchButton: UIButton!
+    
+    @IBOutlet weak var forecastView1: UIView!
+    @IBOutlet weak var forecastView2: UIView!
+    @IBOutlet weak var forecastView3: UIView!
+    @IBOutlet weak var forecastView4: UIView!
+    @IBOutlet weak var forecastVIew5: UIView!
     
     var imageManager = ImageManager()
     var weatherManager = WeatherManager()
@@ -25,7 +33,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        weatherInfoBackground.layer.cornerRadius = 15.0
+        currentWeatherInfoView.layer.cornerRadius = 15.0
         
         weatherManager.delegate = self
         imageManager.delegate = self
@@ -80,7 +88,6 @@ extension MainViewController: WeatherManagerDelegate {
             self.imageManager.fetchImage(city: weather.cityName, weather: weather.description)
         }
     }
-    
 }
 
 //MARK: - ImageManagerDelegate
@@ -125,8 +132,9 @@ extension MainViewController: CLLocationManagerDelegate {
     
 }
 
-//MARK: UISearchResultsUpdating
+//MARK: 5DayForecast
 
-//extension MainViewController: UISearchResultsUpdating {
-//
-//}
+extension MainViewController {
+
+    
+}
