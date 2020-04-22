@@ -129,10 +129,11 @@
                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <size key="titleShadowOffset" width="8" height="1"/>
-                                        <state key="normal" image="magnifyingglass" catalog="system">
+                                        <size key="titleShadowOffset" width="2" height="1"/>
+                                        <state key="normal" image="magnifyingglass.circle" catalog="system">
+                                            <color key="titleShadowColor" red="0.55655080079999997" green="0.1806879938" blue="0.16880348319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="bold">
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             </preferredSymbolConfiguration>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -154,7 +155,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" image="calendar" catalog="system">
+                                        <state key="normal" image="5.circle" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="bold">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             </preferredSymbolConfiguration>
@@ -179,7 +180,7 @@
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" image="location" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="bold">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="medium" weight="bold">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             </preferredSymbolConfiguration>
                                         </state>
@@ -218,7 +219,9 @@
                         <outlet property="buttonStackView" destination="jo9-R5-yJA" id="YvG-pq-EFZ"/>
                         <outlet property="cityLabel" destination="wIv-2M-W1b" id="bBN-NN-jzt"/>
                         <outlet property="conditionImageView" destination="Dre-3y-d8K" id="C6n-Ro-xeo"/>
+                        <outlet property="currentLocationButton" destination="huo-uV-JQ8" id="sTn-Sb-VGq"/>
                         <outlet property="currentWeatherInfoView" destination="xhx-LA-70Y" id="Dsi-qI-bWR"/>
+                        <outlet property="forecastButton" destination="VpJ-o0-jk8" id="sET-qx-qeV"/>
                         <outlet property="searchButton" destination="fGP-NQ-0RD" id="vZc-0R-ARf"/>
                         <outlet property="tempLabel" destination="AXA-bu-itS" id="9P6-q3-P5f"/>
                         <segue destination="Cbc-Y6-7sz" kind="presentation" identifier="openSearchForm" id="Rj7-qX-0UV"/>
@@ -548,12 +551,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="109"/>
+        <image name="5.circle" catalog="system" width="128" height="128"/>
         <image name="cloud" catalog="system" width="128" height="91"/>
         <image name="cloud.drizzle" catalog="system" width="122" height="128"/>
         <image name="cloud.rain" catalog="system" width="122" height="128"/>
         <image name="cloud.sun" catalog="system" width="128" height="90"/>
         <image name="location" catalog="system" width="128" height="121"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="128"/>
     </resources>
 </document>
