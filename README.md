@@ -22,7 +22,7 @@ A weather app built to learn Swift, Xcode, and iOS/tvOS development.
 
 The homepage app logo and top shelf image were designed and rendered using Blender 2.8
 
-![Logo 3D Render](ReadmeAssets/TopShelfCapture.png)
+![Logo 3D Render](ReadmeAssets/TopShelfCapture.PNG)
 
 ## Screenshots
 
