@@ -32,7 +32,7 @@ struct Coord: Codable {
 
 // MARK: - List
 struct List: Codable {
-    let dt: Int
+    let dt: Date
     let main: MainClass
     let weather: [WeatherForecast]
     let clouds: Clouds

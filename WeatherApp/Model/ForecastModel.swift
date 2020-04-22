@@ -9,5 +9,14 @@
 import Foundation
 
 struct ForecastModel {
-    let cod: Int
+    
+    let dt: Date
+    let dtTxt: String
+    
+    var dayOfTheWeek: String {
+        let formatter  = DateFormatter()
+        let date = formatter.shortWeekdaySymbols[Calendar.current.component(.weekday, from: dt)]
+        return date
+    }
+    
 }

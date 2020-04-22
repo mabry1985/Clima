@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol ForecastManagerDelegate {
     func didUpdateForecast(_ forecastMananger: ForecastManager, _ forecast: ForecastModel)
@@ -19,8 +20,13 @@ struct ForecastManager {
 
     let apiKey = ProcessInfo.processInfo.environment["API_KEY"]
         
-    func fetchWeather(city: String, state: String) {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city),\(state)&appid=\(apiKey!)&units=imperial"
+    func fetchForecast(city: String, state: String) {
+        let urlString = "https://api.openweathermap.org/data/2.5/forecast?q=\(city),\(state)&appid=\(apiKey!)&units=imperial"
+        performRequest(with: urlString)
+    }
+    
+    func fetchForecast(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        let urlString = "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey!)&units=imperial"
         performRequest(with: urlString)
     }
     
@@ -48,10 +54,11 @@ struct ForecastManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
-
             let forecast = ForecastModel(
-                cod: 2
+                dt: decodedData.list[0].dt,
+                dtTxt: decodedData.list[0].dtTxt
             )
+            print(forecast.dt)
             return forecast
         } catch {
             self.delegate?.didFailWithError(error)
@@ -59,5 +66,6 @@ struct ForecastManager {
         }
             
     }
+    
     
 }
