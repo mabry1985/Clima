@@ -15,10 +15,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var currentWeatherInfoView: UIView!
+    @IBOutlet weak var buttonStackView: UIStackView!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var forecastButton: UIButton!
+    @IBOutlet weak var currentLocationButton: UIButton!
     
     var imageManager = ImageManager()
     var weatherManager = WeatherManager()
@@ -28,7 +31,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         currentWeatherInfoView.layer.cornerRadius = 15.0
-
         
         weatherManager.delegate = self
         imageManager.delegate = self
@@ -37,6 +39,10 @@ class MainViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
+        searchButton.setImage(UIImage(systemName: "magnifyingglass.circle.fill"), for: .focused)
+        forecastButton.setImage(UIImage(systemName: "5.circle.fill"), for: .focused)
+        currentLocationButton.setImage(UIImage(systemName: "location.fill"), for: .focused)
+
     }
     
     func updateWeatherData(city: String, state: String) {

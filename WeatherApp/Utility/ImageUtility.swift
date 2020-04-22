@@ -11,9 +11,9 @@ import UIKit
 class ImageUtility {
     
     func blurImage(for imageView: UIImageView) {
-        let darkBlur = UIBlurEffect(style: .dark)
+        let lightBlur = UIBlurEffect(style: .regular)
         // 2
-        let blurView = UIVisualEffectView(effect: darkBlur)
+        let blurView = UIVisualEffectView(effect: lightBlur)
         blurView.frame = imageView.bounds
         // 3
         imageView.addSubview(blurView)
