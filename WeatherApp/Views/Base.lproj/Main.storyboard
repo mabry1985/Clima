@@ -22,34 +22,38 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="icb-nN-cl9" userLabel="Background Image">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZGr-P6-qRe">
-                                <rect key="frame" x="794" y="379" width="332" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State / Country" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kKG-tR-Icl">
-                                <rect key="frame" x="794" y="457" width="332" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S71-mu-dID">
-                                <rect key="frame" x="861" y="552" width="198" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchPressed:" destination="Cbc-Y6-7sz" eventType="primaryActionTriggered" id="dGE-Qm-rBO"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-fl-xaf">
+                                <rect key="frame" x="793.5" y="411" width="333" height="258"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZGr-P6-qRe">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="47"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State / Country" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kKG-tR-Icl">
+                                        <rect key="frame" x="0.0" y="86" width="333" height="47"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S71-mu-dID">
+                                        <rect key="frame" x="0.0" y="172" width="333" height="86"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchPressed:" destination="Cbc-Y6-7sz" eventType="primaryActionTriggered" id="dGE-Qm-rBO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="icb-nN-cl9" firstAttribute="leading" secondItem="gVX-KM-h7K" secondAttribute="leading" id="Dlg-YG-8pH"/>
                             <constraint firstAttribute="bottom" secondItem="icb-nN-cl9" secondAttribute="bottom" id="H1E-ZB-J4L"/>
+                            <constraint firstItem="ZDk-fl-xaf" firstAttribute="centerX" secondItem="gVX-KM-h7K" secondAttribute="centerX" id="Hr9-Fg-ZLB"/>
+                            <constraint firstItem="ZDk-fl-xaf" firstAttribute="centerY" secondItem="gVX-KM-h7K" secondAttribute="centerY" id="UtW-vr-JdD"/>
                             <constraint firstAttribute="trailing" secondItem="icb-nN-cl9" secondAttribute="trailing" id="uoQ-mg-DIt"/>
                             <constraint firstItem="icb-nN-cl9" firstAttribute="top" secondItem="gVX-KM-h7K" secondAttribute="top" id="xip-Db-ATI"/>
                         </constraints>
@@ -81,29 +85,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-RE-Xtl">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-NQ-0RD" userLabel="Search Button">
-                                <rect key="frame" x="1820" y="0.0" width="100" height="73"/>
-                                <rect key="contentStretch" x="0.90000000000000002" y="0.0" width="1" height="1"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" image="magnifyingglass" catalog="system"/>
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="BNl-Xd-WM2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VpJ-o0-jk8" userLabel="Current Location">
-                                <rect key="frame" x="1699" y="-1" width="101" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.90000000000000002" y="0.0" width="1" height="1"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" image="calendar" catalog="system"/>
-                                <connections>
-                                    <action selector="forecastButtonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="wAF-Eb-Bfv"/>
-                                </connections>
-                            </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-LA-70Y" userLabel="Current Weather Info View">
                                 <rect key="frame" x="795" y="390" width="330" height="300"/>
                                 <subviews>
@@ -140,26 +121,91 @@
                                     <constraint firstAttribute="width" constant="330" id="xKc-5f-KW8"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="huo-uV-JQ8" userLabel="Current Location">
-                                <rect key="frame" x="1757" y="-1" width="101" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.90000000000000002" y="0.0" width="1" height="1"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" image="location" catalog="system"/>
-                                <connections>
-                                    <action selector="currentLocationPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dKA-LW-aeD"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jo9-R5-yJA" userLabel="Button Stack View">
+                                <rect key="frame" x="1773" y="0.0" width="147" height="294"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-NQ-0RD" userLabel="Search Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="98"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <size key="titleShadowOffset" width="2" height="1"/>
+                                        <state key="normal" image="magnifyingglass.circle" catalog="system">
+                                            <color key="titleShadowColor" red="0.55655080079999997" green="0.1806879938" blue="0.16880348319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="bold">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="BNl-Xd-WM2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VpJ-o0-jk8" userLabel="Forecast Button">
+                                        <rect key="frame" x="0.0" y="98" width="147" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="contentStretch" x="0.90000000000000002" y="0.0" width="1" height="1"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" image="5.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="bold">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="forecastButtonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="wAF-Eb-Bfv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="huo-uV-JQ8" userLabel="Current Location Button">
+                                        <rect key="frame" x="0.0" y="196" width="147" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="contentStretch" x="0.90000000000000002" y="0.0" width="1" height="1"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" image="location" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="medium" weight="bold">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="currentLocationPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dKA-LW-aeD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fGP-NQ-0RD" secondAttribute="trailing" id="1Lm-XR-t9i"/>
-                            <constraint firstItem="fGP-NQ-0RD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5iZ-NZ-LNk"/>
+                            <constraint firstAttribute="trailing" secondItem="jo9-R5-yJA" secondAttribute="trailing" id="N0B-Wy-jsa"/>
                             <constraint firstItem="nbA-RE-Xtl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="O9N-8X-XSF"/>
                             <constraint firstItem="xhx-LA-70Y" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" constant="330" id="SLA-Lc-zzI"/>
                             <constraint firstItem="xhx-LA-70Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q5j-M7-iHA"/>
+                            <constraint firstItem="jo9-R5-yJA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qLY-pZ-q5m"/>
                             <constraint firstItem="xhx-LA-70Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rd4-qS-I0Z"/>
                             <constraint firstItem="nbA-RE-Xtl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s33-LG-mRK"/>
                             <constraint firstAttribute="bottom" secondItem="nbA-RE-Xtl" secondAttribute="bottom" id="ttF-Nc-M31"/>
@@ -170,9 +216,12 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="nbA-RE-Xtl" id="VwQ-7S-5aw"/>
+                        <outlet property="buttonStackView" destination="jo9-R5-yJA" id="YvG-pq-EFZ"/>
                         <outlet property="cityLabel" destination="wIv-2M-W1b" id="bBN-NN-jzt"/>
                         <outlet property="conditionImageView" destination="Dre-3y-d8K" id="C6n-Ro-xeo"/>
+                        <outlet property="currentLocationButton" destination="huo-uV-JQ8" id="sTn-Sb-VGq"/>
                         <outlet property="currentWeatherInfoView" destination="xhx-LA-70Y" id="Dsi-qI-bWR"/>
+                        <outlet property="forecastButton" destination="VpJ-o0-jk8" id="sET-qx-qeV"/>
                         <outlet property="searchButton" destination="fGP-NQ-0RD" id="vZc-0R-ARf"/>
                         <outlet property="tempLabel" destination="AXA-bu-itS" id="9P6-q3-P5f"/>
                         <segue destination="Cbc-Y6-7sz" kind="presentation" identifier="openSearchForm" id="Rj7-qX-0UV"/>
@@ -502,12 +551,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="109"/>
+        <image name="5.circle" catalog="system" width="128" height="128"/>
         <image name="cloud" catalog="system" width="128" height="91"/>
         <image name="cloud.drizzle" catalog="system" width="122" height="128"/>
         <image name="cloud.rain" catalog="system" width="122" height="128"/>
         <image name="cloud.sun" catalog="system" width="128" height="90"/>
         <image name="location" catalog="system" width="128" height="121"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="128"/>
     </resources>
 </document>
