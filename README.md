@@ -2,7 +2,8 @@
 
 ### A Beautiful Weather App
 
-![Apple TV homescreen](/WeatherApp/ReadmeAssets/HomeScreen.png)
+![Apple TV homescreen](ReadmeAssets/HomeScreen.png)
+/Users/HomeScreen.png
 
 ## Description
 A weather app built to learn Swift, Xcode, and iOS/tvOS development.
