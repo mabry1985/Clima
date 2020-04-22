@@ -42,7 +42,6 @@ struct WeatherManager {
                 if let safeData = data {
                    
                     if let weather = self.parseJSON(safeData) {
-                         print("in weather let of perform request")
                         self.delegate?.didUpdateWeather(self, weather)
                     }
                 }

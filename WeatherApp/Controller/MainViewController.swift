@@ -14,8 +14,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
-    @IBOutlet weak var weatherInfoBackground: UIView!
+    @IBOutlet weak var currentWeatherInfoView: UIView!
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
+    
     @IBOutlet weak var searchButton: UIButton!
     
     var imageManager = ImageManager()
@@ -25,7 +27,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        weatherInfoBackground.layer.cornerRadius = 15.0
+        currentWeatherInfoView.layer.cornerRadius = 15.0
+
         
         weatherManager.delegate = self
         imageManager.delegate = self
@@ -54,11 +57,18 @@ class MainViewController: UIViewController {
         locationManager.requestLocation()
     }
     
+    @IBAction func forecastButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "openForecast", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openSearchForm" {
             let destinationVC = segue.destination as! SearchViewController
             destinationVC.mainViewController = self
-            destinationVC.backgroundImage = backgroundImageView
+            destinationVC.backgroundImage = backgroundImageView.image
+        } else if segue.identifier == "openForecast" {
+            let destinationVC = segue.destination as! ForecastViewController
+            destinationVC.backgroundImage = backgroundImageView.image
         }
     }
     
@@ -73,14 +83,12 @@ extension MainViewController: WeatherManagerDelegate {
     
     func didUpdateWeather(_ weatherManager: WeatherManager, _ weather: WeatherModel) {
         DispatchQueue.main.async {
-            print(weather.cityName)
             self.cityLabel.text = weather.cityName
             self.tempLabel.text = "\(weather.temperatureString)°F"
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.imageManager.fetchImage(city: weather.cityName, weather: weather.description)
         }
     }
-    
 }
 
 //MARK: - ImageManagerDelegate
@@ -125,8 +133,9 @@ extension MainViewController: CLLocationManagerDelegate {
     
 }
 
-//MARK: UISearchResultsUpdating
+//MARK: 5DayForecast
 
-//extension MainViewController: UISearchResultsUpdating {
-//
-//}
+extension MainViewController {
+
+    
+}

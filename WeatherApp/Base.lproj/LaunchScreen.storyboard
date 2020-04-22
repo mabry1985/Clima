@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="appleTV" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -26,7 +25,7 @@
                                 <rect key="frame" x="795" y="390" width="330" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIv-2M-W1b">
-                                        <rect key="frame" x="48.5" y="127" width="233" height="46"/>
+                                        <rect key="frame" x="49" y="127" width="233" height="46"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -62,7 +61,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="okd-27-eFw" id="z1O-hx-b3P"/>
                         <outlet property="cityLabel" destination="wIv-2M-W1b" id="bBN-NN-jzt"/>
-                        <outlet property="weatherInfoBackground" destination="xhx-LA-70Y" id="Dsi-qI-bWR"/>
+                        <outlet property="currentWeatherInfoView" destination="xhx-LA-70Y" id="Dsi-qI-bWR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
