@@ -15,11 +15,19 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var forecastView3: UIView!
     @IBOutlet weak var forecastView4: UIView!
     @IBOutlet weak var forecastView5: UIView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+
+    var backgroundImage: UIImage!
     
-    
+    var forecastManager = ForecastManager()
+    let imageTool = ImageUtility()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        forecastManager.delegate = self
+        forecastManager.fetchForecast(city: "Portland", state: "Oregon")
+        backgroundImageView.image = backgroundImage
+        imageTool.blurImage(for: backgroundImageView)
         roundCorners()
        }
     
@@ -42,7 +50,7 @@ class ForecastViewController: UIViewController {
 
 extension ForecastViewController: ForecastManagerDelegate {
     func didUpdateForecast(_ forecastMananger: ForecastManager, _ forecast: ForecastModel) {
-        print("didUpdateForecast")
+        print(forecast.dayOfTheWeek)
     }
     
     func didFailWithError(_ error: Error) {

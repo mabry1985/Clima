@@ -67,7 +67,8 @@ class MainViewController: UIViewController {
             destinationVC.mainViewController = self
             destinationVC.backgroundImage = backgroundImageView.image
         } else if segue.identifier == "openForecast" {
-            print("headed to forecast")
+            let destinationVC = segue.destination as! ForecastViewController
+            destinationVC.backgroundImage = backgroundImageView.image
         }
     }
     

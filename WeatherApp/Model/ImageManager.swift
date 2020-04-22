@@ -65,4 +65,5 @@ struct ImageManager {
         let formattedCity = array.joined(separator: "-")
         return formattedCity
     }
+    
 }

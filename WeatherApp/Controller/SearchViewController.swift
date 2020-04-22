@@ -17,9 +17,12 @@ class SearchViewController: UIViewController {
     
     var mainViewController = MainViewController()
     
+    let imageTool = ImageUtility()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImageView.image = backgroundImage
+        imageTool.blurImage(for: backgroundImageView)
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
