@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
         if segue.identifier == "openSearchForm" {
             let destinationVC = segue.destination as! SearchViewController
             destinationVC.mainViewController = self
-            destinationVC.backgroundImage = backgroundImageView
+            destinationVC.backgroundImage = backgroundImageView.image
         } else if segue.identifier == "openForecast" {
             print("headed to forecast")
         }

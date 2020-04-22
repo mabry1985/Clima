@@ -57,7 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GQg-Za-tdp"/>
                     <connections>
-                        <outlet property="backgroundImage" destination="icb-nN-cl9" id="Nja-c2-afd"/>
+                        <outlet property="backgroundImageView" destination="icb-nN-cl9" id="Aoo-bq-mHA"/>
                         <outlet property="cityForm" destination="ZGr-P6-qRe" id="cWk-HN-1Ao"/>
                         <outlet property="stateForm" destination="kKG-tR-Icl" id="80X-iF-KfM"/>
                     </connections>
