@@ -21,17 +21,17 @@ A weather app built to learn Swift, Xcode, and iOS/tvOS development.
 
 The homepage app logo and top shelf image were designed and rendered using Blender 2.8
 
-![Logo 3D Render](/WeatherApp/ReadmeAssets/TopShelfCapture.png)
+![Logo 3D Render](ReadmeAssets/TopShelfCapture.png)
 
 ## Screenshots
 
-![Clima home page](WeatherApp/ReadmeAssets/Main.png)
+![Clima home page](ReadmeAssets/Main.png)
 
-![5 day forecast](WeatherApp/ReadmeAssets/Forecast.png)
+![5 day forecast](ReadmeAssets/Forecast.png)
 
-![Search page](WeatherApp/ReadmeAssets/Search.png)
+![Search page](ReadmeAssets/Search.png)
 
-![Page with search results](WeatherApp/ReadmeAssets/SearchResult.png)
+![Page with search results](ReadmeAssets/SearchResult.png)
 
 
 

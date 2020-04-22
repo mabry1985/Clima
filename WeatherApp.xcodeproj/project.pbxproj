@@ -77,6 +77,7 @@
 		2C012751244A3C130002A76A = {
 			isa = PBXGroup;
 			children = (
+				2C4C21552450ED01000F3726 /* ReadmeAssets */,
 				2C4C21602450EF7F000F3726 /* README.md */,
 				2C7556F3244CDC0900CDD359 /* Portland.gpx */,
 				2C01275C244A3C130002A76A /* WeatherApp */,
@@ -95,7 +96,6 @@
 		2C01275C244A3C130002A76A /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				2C4C21552450ED01000F3726 /* ReadmeAssets */,
 				2C29E436244A53B700CAF602 /* Model */,
 				2C29E437244A53C100CAF602 /* Views */,
 				2C29E438244A541200CAF602 /* Controller */,
@@ -153,7 +153,8 @@
 				2C4C215C2450ED6D000F3726 /* Search.png */,
 				2C4C215E2450ED76000F3726 /* SearchResult.png */,
 			);
-			path = ReadmeAssets;
+			name = ReadmeAssets;
+			path = WeatherApp/ReadmeAssets;
 			sourceTree = "<group>";
 		};
 		2C6B03732450B9950048601F /* Utility */ = {
