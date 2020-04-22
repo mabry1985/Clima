@@ -20,12 +20,6 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var searchButton: UIButton!
     
-    @IBOutlet weak var forecastView1: UIView!
-    @IBOutlet weak var forecastView2: UIView!
-    @IBOutlet weak var forecastView3: UIView!
-    @IBOutlet weak var forecastView4: UIView!
-    @IBOutlet weak var forecastVIew5: UIView!
-    
     var imageManager = ImageManager()
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
@@ -34,6 +28,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         currentWeatherInfoView.layer.cornerRadius = 15.0
+
         
         weatherManager.delegate = self
         imageManager.delegate = self
@@ -62,11 +57,17 @@ class MainViewController: UIViewController {
         locationManager.requestLocation()
     }
     
+    @IBAction func forecastButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "openForecast", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openSearchForm" {
             let destinationVC = segue.destination as! SearchViewController
             destinationVC.mainViewController = self
             destinationVC.backgroundImage = backgroundImageView
+        } else if segue.identifier == "openForecast" {
+            print("headed to forecast")
         }
     }
     
