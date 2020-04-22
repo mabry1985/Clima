@@ -2,7 +2,7 @@
 
 ### A Beautiful Weather App
 
-! [Apple TV homescreen](/WeatherApp/ReadmeAssets/HomeScreen.png)
+![Apple TV homescreen](/WeatherApp/ReadmeAssets/HomeScreen.png)
 
 ## Description
 A weather app built to learn Swift, Xcode, and iOS/tvOS development.
@@ -21,17 +21,17 @@ A weather app built to learn Swift, Xcode, and iOS/tvOS development.
 
 The homepage app logo and top shelf image were designed and rendered using Blender 2.8
 
-! [Logo 3D Render](/WeatherApp/ReadmeAssets/TopShelfCapture.png)
+![Logo 3D Render](/WeatherApp/ReadmeAssets/TopShelfCapture.png)
 
 ## Screenshots
 
-! [Clima home page](/WeatherApp/ReadmeAssets/Main.png)
+![Clima home page](WeatherApp/ReadmeAssets/Main.png)
 
-! [5 day forecast](/WeatherApp/ReadmeAssets/Forecast.png)
+![5 day forecast](WeatherApp/ReadmeAssets/Forecast.png)
 
-! [Search page](/WeatherApp/ReadmeAssets/Search.png)
+![Search page](WeatherApp/ReadmeAssets/Search.png)
 
-! [Page with search results](/WeatherApp/ReadmeAssets/SearchResult.png)
+![Page with search results](WeatherApp/ReadmeAssets/SearchResult.png)
 
 
 
