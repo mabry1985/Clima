@@ -58,7 +58,6 @@ struct ForecastManager {
                 dt: decodedData.list[0].dt,
                 dtTxt: decodedData.list[0].dtTxt
             )
-            print(forecast.dt)
             return forecast
         } catch {
             self.delegate?.didFailWithError(error)

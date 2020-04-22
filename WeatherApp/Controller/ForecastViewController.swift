@@ -50,7 +50,6 @@ class ForecastViewController: UIViewController {
 
 extension ForecastViewController: ForecastManagerDelegate {
     func didUpdateForecast(_ forecastMananger: ForecastManager, _ forecast: ForecastModel) {
-        print(forecast.dayOfTheWeek)
     }
     
     func didFailWithError(_ error: Error) {
