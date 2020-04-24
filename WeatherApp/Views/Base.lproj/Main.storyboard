@@ -43,6 +43,7 @@
                                         </state>
                                         <connections>
                                             <action selector="searchPressed:" destination="Cbc-Y6-7sz" eventType="primaryActionTriggered" id="dGE-Qm-rBO"/>
+                                            <segue destination="vMZ-fg-uLF" kind="unwind" unwindAction="returnToMainView:" id="Yfg-sB-Qaw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,6 +68,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2S-ZU-56g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vMZ-fg-uLF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2993" y="1116"/>
         </scene>
