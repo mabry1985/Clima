@@ -14,19 +14,38 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     var backgroundImage: UIImage!
-    
     var mainViewController = MainViewController()
-    
     let imageTool = ImageUtility()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cityForm.delegate = self
+        stateForm.delegate = self
+        
         backgroundImageView.image = backgroundImage
         imageTool.blurImage(for: backgroundImageView)
+                
     }
+
+}
+
+//MARK: - UITextFieldDelegate
+
+extension SearchViewController : UITextFieldDelegate {
     
     @IBAction func searchPressed(_ sender: UIButton) {
         mainViewController.updateWeatherData(city: cityForm.text!, state: stateForm.text!)
+        print("\(cityForm.text!), \(stateForm.text!)")
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Enter Required Field"
+            return false
+        }
     }
     
 }

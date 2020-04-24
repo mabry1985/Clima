@@ -45,16 +45,6 @@ class MainViewController: UIViewController {
 
     }
     
-    func updateWeatherData(city: String, state: String) {
-        weatherManager.fetchWeather(city: city, state: state)
-    }
-    
-    override var preferredFocusedView: UIView? {
-        get {
-            return self.searchButton
-        }
-    }
-    
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "openSearchForm", sender: self)
     }
@@ -68,14 +58,19 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "openSearchForm" {
+        
+        switch segue.identifier {
+        case "openSearchForm":
             let destinationVC = segue.destination as! SearchViewController
             destinationVC.mainViewController = self
             destinationVC.backgroundImage = backgroundImageView.image
-        } else if segue.identifier == "openForecast" {
+        case "openForecast":
             let destinationVC = segue.destination as! ForecastViewController
             destinationVC.backgroundImage = backgroundImageView.image
+        default:
+            return
         }
+        
     }
     
     func didFailWithError(_ error: Error) {
@@ -94,6 +89,10 @@ extension MainViewController: WeatherManagerDelegate {
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.imageManager.fetchImage(city: weather.cityName, weather: weather.description)
         }
+    }
+    
+    func updateWeatherData(city: String, state: String) {
+        weatherManager.fetchWeather(city: city, state: state)
     }
 }
 
@@ -136,12 +135,5 @@ extension MainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
-    
-}
-
-//MARK: 5DayForecast
-
-extension MainViewController {
-
     
 }

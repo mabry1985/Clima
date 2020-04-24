@@ -19,9 +19,16 @@ struct WeatherManager {
     var delegate: WeatherManagerDelegate?
 
     let apiKey = ProcessInfo.processInfo.environment["API_KEY"]
+    
+    func formatCity(_ city: String) -> String {
+        let array = city.components(separatedBy: " ")
+        let formattedCity = array.joined(separator: "+")
+        return formattedCity
+    }
         
     func fetchWeather(city: String, state: String) {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city),\(state)&appid=\(apiKey!)&units=imperial"
+        let formattedCity = formatCity(city)
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(formattedCity),\(state)&appid=\(apiKey!)&units=imperial"
         performRequest(with: urlString)
     }
     

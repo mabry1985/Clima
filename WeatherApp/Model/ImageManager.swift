@@ -22,8 +22,7 @@ struct ImageManager {
     func fetchImage(city: String, weather: String) {
         
         let formattedCity = formatCity(city)
-        let urlString = "https://api.unsplash.com/photos/random?client_id=hrOiBGmZxsMIkdw29rj6KyoA4wlOZ26OXaiXXR2Ty7E&query=\(formattedCity)-\(weather)&orientation=landscape"
-        
+        let urlString = "https://api.unsplash.com/photos/random?client_id=\(apiKey!)&query=\(formattedCity)-\(weather)&orientation=landscape"
         performRequest(with: urlString)
     }
     
