@@ -37,15 +37,7 @@ extension SearchViewController : UITextFieldDelegate {
     @IBAction func searchPressed(_ sender: UIButton) {
         mainViewController.updateWeatherData(city: cityForm.text!, state: stateForm.text!)
         print("\(cityForm.text!), \(stateForm.text!)")
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            return true
-        } else {
-            textField.placeholder = "Enter Required Field"
-            return false
-        }
-    }
-    
+    }    
 }
+
+
